@@ -8,8 +8,14 @@ pageord: 501
 --- 
 
 # Developing Plugins
+## Integrating with external CM tools 
+## Integrating with additional IaaS providers 
 
 # Integrating External Monitoring Systems
+## Nagios
+## Statsd / Collectd 
+## Ganglia
+## Logstash
 
 # Developing Custom Policies
 

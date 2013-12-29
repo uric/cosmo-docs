@@ -7,9 +7,9 @@ abstract: Explains how to install Cloudify manager and how to deploy your first 
 pageord: 101
 --- 
 
-h1. Install Cloudify on your laptop using Vagrant
+# Install Cloudify on your laptop using Vagrant
 
-h1. Install Cloudify on OpenStack or DevStack
+# Install Cloudify on OpenStack or DevStack
 
-h1. Deploy your first application
+# Deploy your first application
 

@@ -16,6 +16,20 @@ pageord: 201
 ## Architecture Overview and flow
 
 ## REST API & UI
+Cloudify is controlled via REST API. The REST API covers all Cloudify functionality and is documented [here].
+You can use the REST API through Cloudify Non-interactive CLI or write your own REST client.
+
+Cloudify commercial edition comes with Web GUI. The Web GUI works vs. the REST API but adds additional value and visibility.
+
+The GUI has the following screens:
+* Blueprints screen
+* Blueprint Topology Screen
+* Deployments screen
+* Deployment Topology screen
+* Deployment Network Topology screen
+* Deployment Events screen
+* Deployment Performance Metrics screen
+
 
 ## Workflow Engine
 

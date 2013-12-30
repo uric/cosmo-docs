@@ -52,7 +52,9 @@ Typically, the Graphite server is installed on a dedicated host. [You can config
 
 Cloudify offers a policy engine that runs custom policies in order to make runtime decisions about availability, SLA, etc. For example, during installation, the policy engine consumes streams of events coming from monitoring probes or tools. The policy engine analyze these stream to decide if a specific node is up and running and provides the required functionality. The results of such "stasrt detection" policy are fed into the runtime model.
 
-Cloudify uses [Riemann.IO CEP](http://riemann.io/) as the core of the policy engine component. 
+Cloudify uses [Riemann.IO CEP](http://riemann.io/) as the core of the policy engine component. Cloudify user doesn't need to acces or config Riemann directly. The Policies are registered, activated, deactivated and deleted by the Workflow Engine as part of the orchestration process.
+
+The policies are written in Clojure.
 
 ## Message Broker
 

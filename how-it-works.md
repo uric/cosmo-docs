@@ -79,8 +79,18 @@ Plugins are python facades for any third party tool you want to use with any Clo
 # Supported Clouds & Tools
 ## Clouds and Virtualization
 <table>
+<tr>
 <th>Cloud</th>
 <th>Supported APIs</th>
+</tr>
+<tr>
+<td>OpenStack</td>
+<td>
+* Nova
+* Neutron
+* Cinder
+</td>
+</tr>
 </table>
 ## DevOps Tools
 <table>

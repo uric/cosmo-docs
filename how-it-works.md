@@ -100,6 +100,16 @@ Plugins are python facades for any third party tool you want to use with any Clo
 </table>
 ## DevOps Tools
 <table>
+<tr>
 <th>Tool</th>
 <th>Coverage</th>
+</tr>
+<tr>
+<td>Chef</td>
+<td>Chef client</td>
+</tr>
+<tr>
+<td>Puppet</td>
+<td>Puppet Master</td>
+</tr>
 </table>

@@ -26,7 +26,7 @@ The orchestrator works in 2 main flow:
 
 
 ## REST API & UI
-Cloudify is controlled via REST API. The REST API covers all Cloudify functionality. See [Cloudify REST API Documentation](http://www.cloudifysource.org/cosmo-rest-docs/).
+Cloudify is controlled via REST API. The REST API covers all the Cloud Orchestration and Management functionality. See [Cloudify REST API Documentation](http://www.cloudifysource.org/cosmo-rest-docs/).
 You can use the REST API through Cloudify Non-interactive CLI or write your own REST client.
 
 Cloudify commercial edition comes with Web GUI. The Web GUI works vs. the REST API but adds additional value and visibility.

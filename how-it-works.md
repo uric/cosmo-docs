@@ -38,7 +38,15 @@ Cloudify wroflow engine uses workflows written in a mini language called [Radial
 
 ## Runtime Model
 
+Cloudify stores the blueprint information and the runtime information in JSON documents. The runtime model includes the following information: //Idan to provide 
+
 ## Metrics Database
+
+CLoudify uses [Graphite](http://graphite.readthedocs.org/en/latest/overview.html) to persist and aggregate the application availability and performance metrics.
+
+Cloudify users don't need to access Graphite API directly in order to consume the persisted data. Cloudify exposes all the metreics data through REST API and Web GUI.
+
+Typically, the Graphite server is installed on a dedicated host. [You can configure the location of your graphite server during bootstrap](#)
 
 ## Policy Engine
 

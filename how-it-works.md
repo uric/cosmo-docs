@@ -32,6 +32,9 @@ The GUI has the following screens:
 
 
 ## Workflow Engine
+Cloudify uses a Workflow engine to allow for any automation process through built-in and custom workflows.
+The Workflow engine is responsible for timing and orchestrating tasks for creating / manipulating the application components. To achieve that the worflow engine interacts with the Blueprint and runtime data to get the properties and plugin information and writes tasks to the task broker.
+Cloudify wroflow engine uses workflows written in a mini language called [Radial](http://ruote.rubyforge.org/definitions.html#radial)
 
 ## Runtime Model
 

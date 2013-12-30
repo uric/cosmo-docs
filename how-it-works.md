@@ -93,6 +93,10 @@ Plugins are python facades for any third party tool you want to use with any Clo
 </ul>
 </td>
 </tr>
+<tr>
+<td>Vagrant</td>
+<td>Virtual Box</td>
+</tr>
 </table>
 ## DevOps Tools
 <table>

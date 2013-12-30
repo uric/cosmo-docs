@@ -15,6 +15,16 @@ pageord: 201
 
 ## Architecture Overview and flow
 
+Cloudify 3.0 has a new architecture. The architecture is based on a central stateful orchestrator and executing agents. The orchestrator - agents communication is asynchoronouse, where the agents read their tasks from queues
+
+The orchestration gets feedback from the runtime deployments through a policy engine that evaluates monitoring events and updates the state.
+
+The orchestrator works in 2 main flow:
+* User / API driven flow - in this flow a bluprint is uploaded to the Cloudify manager and a workflow is invoked. Alternatively a workflow can be invoked on an existing deployment using the API
+* Policy Driven - in this flow a Workflow is invoked by a policy without user intervention
+
+
+
 ## REST API & UI
 Cloudify is controlled via REST API. The REST API covers all Cloudify functionality. See [Cloudify REST API Documentation](http://www.blabla.org/docs).
 You can use the REST API through Cloudify Non-interactive CLI or write your own REST client.

@@ -62,11 +62,16 @@ Cloudify offers policy examples for the common use cases.
 Cloudify uses [Celery](http://www.celeryproject.org/) with [RabbitMQ](http://www.rabbitmq.com/) message bus to manager task distribution and execution.
 Cloudify tasks contain the blueprint information and the runtime information (if applicable) of the relevant node, the plugin (name and URL) that will execute the task and the operation name this plugin need to execute.
 
-Cloudify agents that are based on Celery workers listen to the RabbitMQ queues to get tasks they need to execute (see more information below). Once a message arrive, they invoke the task and report back.
+Cloudify agents that are based on Celery workers listen to the RabbitMQ queues to obtain tasks they need to execute (see more information below). Once a message arrive, they invoke the task and report back.
 
 ## Tasks
+Task is a bit overloaded term - it is a step in the Workflow and for Celery it means an extension to execute
+In this documentation we refer to the former as a task and to the later as a plugin (at least as the plugin python facade)
 
 ## Agents
+
+Cloudify agents are extended celery workers. an agent can be located remote to the Node it manipulates or collocated on the same host. Cloudify have agent(s) on the management VM to perform IaaS tasks (such as host creation) and other remote tasks (such as agent installation using SSH on new application hosts)
+
 
 ## Plugins
 

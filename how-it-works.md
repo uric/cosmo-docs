@@ -86,9 +86,11 @@ Plugins are python facades for any third party tool you want to use with any Clo
 <tr>
 <td>OpenStack</td>
 <td>
-* Nova
-* Neutron
-* Cinder
+<ul>
+<li>Nova</li>
+<li>Neutron</li>
+<li>Cinder</li>
+</ul>
 </td>
 </tr>
 </table>

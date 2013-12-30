@@ -54,7 +54,8 @@ Cloudify offers a policy engine that runs custom policies in order to make runti
 
 Cloudify uses [Riemann.IO CEP](http://riemann.io/) as the core of the policy engine component. Cloudify user doesn't need to acces or config Riemann directly. The Policies are registered, activated, deactivated and deleted by the Workflow Engine as part of the orchestration process.
 
-The policies are written in Clojure.
+The policies are written in [Clojure](http://clojure.org/). Riemann offers many [built it functions for analyazing monitoring information](http://riemann.io/api.html).
+Cloudify offers policy examples for the common use cases.
 
 ## Message Broker
 

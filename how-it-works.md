@@ -110,6 +110,10 @@ Plugins are python facades for any third party tool you want to use with any Clo
 </tr>
 <tr>
 <td>Puppet</td>
-<td>Puppet Master</td>
+<td>Puppet Master &amp; Agent mode</td>
+</tr>
+<tr>
+<td>Fabric</td>
+<td> -- </td>
 </tr>
 </table>

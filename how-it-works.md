@@ -74,5 +74,6 @@ Cloudify agents are extended celery workers. an agent can be located remote to t
 
 
 ## Plugins
+Plugins are python facades for any third party tool you want to use with any Cloudify workflow execution. Notable examples are plugins for IaaS APIs, plugins for Configuration Management tools and even plugins for installation of monitoring agents
 
 # Supported Clouds & Tools

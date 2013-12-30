@@ -57,7 +57,12 @@ Cloudify uses [Riemann.IO CEP](http://riemann.io/) as the core of the policy eng
 The policies are written in [Clojure](http://clojure.org/). Riemann offers many [built it functions for analyazing monitoring information](http://riemann.io/api.html).
 Cloudify offers policy examples for the common use cases.
 
-## Message Broker
+## Tasks Broker
+
+Cloudify uses [Celery](http://www.celeryproject.org/) with [RabbitMQ](http://www.rabbitmq.com/) message bus to manager task distribution and execution.
+Cloudify tasks contain the blueprint information and the runtime information (if applicable) of the relevant node, the plugin (name and URL) that will execute the task and the operation name this plugin need to execute.
+
+Cloudify agents that are based on Celery workers listen to the RabbitMQ queues to get tasks they need to execute (see more information below). Once a message arrive, they invoke the task and report back.
 
 ## Tasks
 

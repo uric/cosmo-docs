@@ -62,7 +62,7 @@ Cloudify users don't need to access Graphite API directly in order to consume th
 
 Typically, the Graphite server is installed on a dedicated host. [You can configure the location of your graphite server during bootstrap](#)
 
-## Policy Engine
+## <a name="Policy Engine">Policy Engine</a>
 
 Cloudify offers a policy engine that runs custom policies in order to make runtime decisions about availability, SLA, etc. For example, during installation, the policy engine consumes streams of events coming from monitoring probes or tools. The policy engine analyze these stream to decide if a specific node is up and running and provides the required functionality. The results of such "stasrt detection" policy are fed into the runtime model.
 
@@ -71,7 +71,7 @@ Cloudify uses [Riemann.IO CEP](http://riemann.io/) as the core of the policy eng
 The policies are written in [Clojure](http://clojure.org/). Riemann offers many [built it functions for analyazing monitoring information](http://riemann.io/api.html).
 Cloudify offers policy examples for the common use cases.
 
-## Tasks Broker
+## <a name="Tasks Broker">Tasks Broker</a>
 
 Cloudify uses [Celery](http://www.celeryproject.org/) with [RabbitMQ](http://www.rabbitmq.com/) message bus to manager task distribution and execution.
 Cloudify tasks contain the blueprint information and the runtime information (if applicable) of the relevant node, the plugin (name and URL) that will execute the task and the operation name this plugin need to execute.

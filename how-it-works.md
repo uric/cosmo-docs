@@ -45,16 +45,16 @@ The GUI has the following screens:
 * Deployment Performance Metrics screen
 
 
-## Workflow Engine
+## <a name="Workflow Engine">Workflow Engine</a>
 Cloudify uses a Workflow engine to allow for any automation process through built-in and custom workflows.
 The Workflow engine is responsible for timing and orchestrating tasks for creating / manipulating the application components. To achieve that the worflow engine interacts with the Blueprint and runtime data to get the properties and plugin information and writes tasks to the task broker.
 Cloudify wroflow engine uses workflows written in a mini language called [Radial](http://ruote.rubyforge.org/definitions.html#radial)
 
-## Runtime Model
+## <a name="Runtime Model">Runtime Model</a>
 
 Cloudify stores the blueprint information and the runtime information in JSON documents. The runtime model includes the following information: //Idan to provide 
 
-## Metrics Database
+## <a name="Metrics Database">Metrics Database</a>
 
 CLoudify uses [Graphite](http://graphite.readthedocs.org/en/latest/overview.html) to persist and aggregate the application availability and performance metrics.
 

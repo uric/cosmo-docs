@@ -25,7 +25,7 @@ The orchestrator works in 2 main flow:
 
 ### Workflow Execution
 Workflow execution requires the Workflow itslef and a [Topology](#topology)
-The Workflow engine runs the worflow algorithm and in each step process the selected Nodes. For each node it creates a task that typically implements a hook in the node set of lifecycle hooks, using the concrete implementation ( (see plugins)[#plugins] )
+The Workflow engine runs the worflow algorithm and in each step process the selected Nodes. For each node it creates a task that typically implements a hook in the node set of lifecycle hooks, using the concrete implementation  (see plugins)[#plugins] 
 
 
 

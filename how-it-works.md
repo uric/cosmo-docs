@@ -78,16 +78,16 @@ Cloudify tasks contain the blueprint information and the runtime information (if
 
 Cloudify agents that are based on Celery workers listen to the RabbitMQ queues to obtain tasks they need to execute (see more information below). Once a message arrive, they invoke the task and report back.
 
-## Tasks
+## <a name="Tasks">Tasks</a>
 Task is a bit overloaded term - it is a step in the Workflow and for Celery it means an extension to execute
 In this documentation we refer to the former as a task and to the later as a plugin (at least as the plugin python facade)
 
-## Agents
+## <a name="Agents">Agents</a>
 
 Cloudify agents are extended celery workers. an agent can be located remote to the Node it manipulates or collocated on the same host. Cloudify have agent(s) on the management VM to perform IaaS tasks (such as host creation) and other remote tasks (such as agent installation using SSH on new application hosts)
 
 
-## Plugins
+## <a name="Plugins">Plugins</a>
 Plugins are python facades for any third party tool you want to use with any Cloudify workflow execution. Notable examples are plugins for IaaS APIs, plugins for Configuration Management tools and even plugins for installation of monitoring agents
 
 # Supported Clouds & Tools

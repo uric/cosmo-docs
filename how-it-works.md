@@ -23,6 +23,10 @@ The orchestrator works in 2 main flow:
 * User / API driven flow - in this flow a bluprint is uploaded to the Cloudify manager and a workflow is invoked. Alternatively a workflow can be invoked on an existing deployment using the API
 * Policy Driven - in this flow a Workflow is invoked by a policy without user intervention
 
+### Workflow Execution
+Workflow execution requires the Workflow itslef and a [Topology](#topology)
+The Workflow engine runs the worflow algorithm and in each step process the selected Nodes. For each node it creates a task that typically implements a hook in the node set of lifecycle hooks, using the concrete implementation ( (see plugins)[#plugins] )
+
 
 
 ## REST API & UI

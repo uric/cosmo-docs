@@ -19,9 +19,11 @@ A Deployement is an instance of the Blueprint on which you can run workflows, mo
 
 # Running a Workflow
 
-Once you have a Delpoyment ready, you can [list the Blueprint available workflows](#missing) and run a workflow. Typically, you will first run the Install workflow (this name stands for the default installation workflow, you can call your custom workflow with any name you want)
+Once you have a Delpoyment ready, you can [list the Blueprint available workflows](#missing) and [run a workflow](http://www.cloudifysource.org/cosmo-rest-docs/#!/manager-rest-0.1-spec.json/execute_post_9). Typically, you will first run the Install workflow (this name stands for the default installation workflow, you can call your custom workflow with any name you want)
 
 # Tracking Workflow progress and result
+
+When you run a workflow, you can track the progress with several REST calls. First, the call for executing the workflow will return a status. Then, by using the [REST call for events](http://www.cloudifysource.org/cosmo-rest-docs/#!/manager-rest-0.1-spec.json/readEvents_get_10), you can get the actuall progress in details. The same information can be obtained using the CLI command:
 
 # Updating Policies: set thresholds, change policy definition, add/remove/suspend/resume policies 
 

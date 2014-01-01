@@ -9,6 +9,9 @@ pageord: 401
 
 # Uploading a Blueprint
 
+Uploading a blueprint is the first step for using a blueprint with Cloudify. This can be done using the [REST API upload call](http://www.cloudifysource.org/cosmo-rest-docs/#!/manager-rest-0.1-spec.json/upload_post_1).
+Once uploaded, you can create deployements and run workflows on the deployements
+
 # Installing and Uninstalling a Blueprint
 
 # Tracking Blueprint Installation

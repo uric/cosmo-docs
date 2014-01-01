@@ -25,7 +25,14 @@ Once you have a Delpoyment ready, you can [list the Blueprint available workflow
 
 When you run a workflow, you can track the progress with several REST calls. First, the call for executing the workflow will return a status. Then, by using the [REST call for events](http://www.cloudifysource.org/cosmo-rest-docs/#!/manager-rest-0.1-spec.json/readEvents_get_10), you can get the actuall progress in details. The same information can be obtained using the CLI command:
 
-# Updating Policies: set thresholds, change policy definition, add/remove/suspend/resume policies 
+# Updating Policies
+## set thresholds
+
+## change policy definition
+
+## add/remove/ policies
+
+## suspend/resume policies 
 
 # Implementing Continuous Delivery
 

@@ -16,7 +16,12 @@ ANother prerequisite is [PIP install - the Python package manager](http://www.pi
 
 Now you are ready to install the CLI
 
-## Cloudify CLI overview
+## Meet Cloudify CLI 
+
+###Overview
+
+Cloudify CLI is a tool written in Python that allows the user to init configuration and bootstrap the Cloudify Management Server on different cloud environments (aka Providers). In addition the CLI serves as Cloudify API client providing commands for application deployments and management.
+
 ### Providers
 A provider is any platform which allows for the creation and bootstrapping of a management server (e.g. Openstack). The CLI can work with any provider once the appropriate extension has been installed. A provider extension is provider-specific code which handles environment-related operations such as bootstrap and teardown.
 

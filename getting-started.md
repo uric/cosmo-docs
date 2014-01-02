@@ -33,7 +33,16 @@ Every provider extention is expected to implement the following interface:
 ####Currently Supported Providers:
 * [Openstack](https://github.com/CloudifySource/cloudify-openstack/tree/develop)
 
+### Working-Directory Settings and Configurations
 
+When running the CLI **cfy init** command, a ".cloudify" file will be created in the target directory. All local settings (such as the default management server and aliases) are stored in that file, and only take effect when using the CLI from the target directory.
+
+Additionally to creating the ".cloudify" file, the **cfy init** command will also create two provider-specific configuration files, "cloudify-config.yaml" and "cloudify-config.defaults.yaml". These files are only required for the **cfy bootstrap** command (which expects to find these files by their default names, but may also accept paths as parameters).
+
+All initial configuration parameters in "cloudify-config.yaml" are mandatory fields that must be supplied by the user. "cloudify-config.defaults.yaml", on the other hand, stores more advanced configuration parameters.  
+The values of "cloudify-config.defaults.yaml" are only considered if missing from "cloudify-config.yaml", and therefore they can be modified either in-place or simply overridden by assigning different values to them in "cloudify-config.yaml".
+
+Note: If the Cloudify working directory is also a git repository, it's recommended to add ".cloudify" to the .gitignore file.
 
 # Install Cloudify on your laptop using Vagrant
 
@@ -66,16 +75,7 @@ Every provider extention is expected to implement the following interface:
 
 
 
-## Working-Directory Settings and Configurations
 
-When running the CLI **cfy init** command, a ".cloudify" file will be created in the target directory. All local settings (such as the default management server and aliases) are stored in that file, and only take effect when using the CLI from the target directory.
-
-Additionally to creating the ".cloudify" file, the **cfy init** command will also create two provider-specific configuration files, "cloudify-config.yaml" and "cloudify-config.defaults.yaml". These files are only required for the **cfy bootstrap** command (which expects to find these files by their default names, but may also accept paths as parameters).
-
-All initial configuration parameters in "cloudify-config.yaml" are mandatory fields that must be supplied by the user. "cloudify-config.defaults.yaml", on the other hand, stores more advanced configuration parameters.  
-The values of "cloudify-config.defaults.yaml" are only considered if missing from "cloudify-config.yaml", and therefore they can be modified either in-place or simply overridden by assigning different values to them in "cloudify-config.yaml".
-
-Note: If the Cloudify working directory is also a git repository, it's recommended to add ".cloudify" to the .gitignore file.
 
 
 -----

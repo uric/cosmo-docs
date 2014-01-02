@@ -9,6 +9,13 @@ pageord: 101
 # Before you start
 ## Install Python on your laptop
 
+Cloudify CLI requires Python. If you don't have Python installed, [download python](http://www.python.org/getit/).
+Windows users might want to [read about using Python with Windows](http://docs.python.org/2/using/windows.html)
+
+ANother prerequisite is [PIP install - the Python package manager](http://www.pip-installer.org/en/latest/installing.html)
+
+Now you are ready to install the CLI
+
 ## Cloudify CLI overview
 ### Providers
 A provider is any platform which allows for the creation and bootstrapping of a management server (e.g. Openstack). The CLI can work with any provider once the appropriate extension has been installed. A provider extension is provider-specific code which handles environment-related operations such as bootstrap and teardown.

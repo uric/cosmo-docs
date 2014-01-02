@@ -85,7 +85,7 @@ Note: If the Cloudify working directory is also a git repository, it's recommend
 This will install your deployment - all you have left to do is sit back and watch the events flow by until the deployment is complete.
 
 
-## Commands Docs
+# Command Reference
 
 **Command:** status
 

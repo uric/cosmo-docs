@@ -6,27 +6,40 @@ publish: false
 abstract: Explains how to install Cloudify manager and how to deploy your first application to the Cloud
 pageord: 101
 --- 
+# Before you start
+## Install Python on your laptop
+
+## Cloudify CLI overview
+### Providers
+A provider is any platform which allows for the creation and bootstrapping of a management server (e.g. Openstack). The CLI can work with any provider once the appropriate extension has been installed. A provider extension is provider-specific code which handles environment-related operations such as bootstrap and teardown.
+
+Note that the CLI can be used even without the installation of any providers - if you already possess a bootstrapped management server, you may simply direct the CLI to work with that server (`cfy use <management-ip> -a my-server`), and you can then issue any of the CLI commands to that server (with the exception of the "cfy teardown" command)
+#### Creating a new provider extension:
+Provider extensions are simply Python modules which adhere to certain conventions and implement a certain interface.  
+
+By convention, the module name is called "cloudify_<provider-name>.py". While any name is viable in practice, the CLI **cfy init** command, which receives a '*provider*' parameter, is set to first search for a module named by the convention, and only search for the exact '*provider*' value given if such a module was not found.
+
+Every provider extention is expected to implement the following interface:
+
+  - **init**(*logger*, *target_directory*, *config_file_name*, *defaults_config_file_name*)  
+    this method is used to create the two configuration files with the supplied names at the given target directory, as well as make any other initializations required by the specific provider
+  
+  - **bootstrap**(*logger*, *config*)  
+    this method is used to bootstrap the management server as well as the environment (e.g. network) in which it resides. The method must then __return the IP of the bootstrapped management server__
+  
+  - **teardown**(*logger*, *management_ip*)  
+    this method is used to tear down the server at the address supplied, as well as any environment objects related to the server which will no longer be of use.
+
+####Currently Supported Providers:
+* [Openstack](https://github.com/CloudifySource/cloudify-openstack/tree/develop)
+
+
 
 # Install Cloudify on your laptop using Vagrant
 
 # Install Cloudify on OpenStack or DevStack
 
-# cosmo-cli
-
-Command line interface for [Cloudify](https://github.com/CloudifySource/cosmo-manager)
-
-* [Deploying your first application - Walkthrough](#deploying-your-first-application---walkthrough)
-* [Providers](#providers)
-  * [Currently Supported Providers](#currently-supported-providers)
-  * [Creating a new provider extension](#creating-a-new-provider-extension)
-* [Working-Directory Settings and Configurations](#working-directory-settings-and-configurations)
-* [Commands Docs](#commands-docs)
-
-
----
-
-
-## Deploying your first application - Walkthrough
+## Using the Cloudify CLI
 **1. Installing the CLI and a provider extension:**
   - Install Cloudify CLI (temporary url, will be on PyPI soon):  
   `pip install https://github.com/CloudifySource/cosmo-cli/archive/develop.zip`
@@ -48,50 +61,9 @@ Command line interface for [Cloudify](https://github.com/CloudifySource/cosmo-ma
   This could take a bit of time to finish... Looking for something to do in the meanwhile? http://dynamic.xkcd.com/random/comic/
 
 <br>
-**3. Deploying your application:**
-  - Upload your blueprint:  
-  `cfy blueprints upload my-app/blueprint.yaml -a my-blueprint`
-
-  - Create a deployment of the blueprint:  
-  `cfy deployments create my-blueprint -a my-deployment`
-
-  - Execute an install operation on the deployment:  
-  `cfy deployments execute install my-deployment`
-
-This will install your deployment - all you have left to do is sit back and watch the events flow by until the deployment is complete.
 
 
----
 
-
-## Providers
-A provider is any platform which allows for the creation and bootstrapping of a management server (e.g. Openstack). The CLI can work with any provider once the appropriate extension has been installed. A provider extension is provider-specific code which handles environment-related operations such as bootstrap and teardown.
-
-Note that the CLI can be used even without the installation of any providers - if you already possess a bootstrapped management server, you may simply direct the CLI to work with that server (`cfy use <management-ip> -a my-server`), and you can then issue any of the CLI commands to that server (with the exception of the "cfy teardown" command)
-
-
-###Currently Supported Providers:
-* [Openstack](https://github.com/CloudifySource/cloudify-openstack/tree/develop)
-
-
-### Creating a new provider extension:
-Provider extensions are simply Python modules which adhere to certain conventions and implement a certain interface.  
-
-By convention, the module name is called "cloudify_<provider-name>.py". While any name is viable in practice, the CLI **cfy init** command, which receives a '*provider*' parameter, is set to first search for a module named by the convention, and only search for the exact '*provider*' value given if such a module was not found.
-
-Every provider extention is expected to implement the following interface:
-
-  - **init**(*logger*, *target_directory*, *config_file_name*, *defaults_config_file_name*)  
-    this method is used to create the two configuration files with the supplied names at the given target directory, as well as make any other initializations required by the specific provider
-  
-  - **bootstrap**(*logger*, *config*)  
-    this method is used to bootstrap the management server as well as the environment (e.g. network) in which it resides. The method must then __return the IP of the bootstrapped management server__
-  
-  - **teardown**(*logger*, *management_ip*)  
-    this method is used to tear down the server at the address supplied, as well as any environment objects related to the server which will no longer be of use.
-
-
----
 
 
 ## Working-Directory Settings and Configurations
@@ -297,4 +269,15 @@ Note: If the Cloudify working directory is also a git repository, it's recommend
 
 
 # Deploy your first application
+**3. Deploying your application:**
+  - Upload your blueprint:  
+  `cfy blueprints upload my-app/blueprint.yaml -a my-blueprint`
+
+  - Create a deployment of the blueprint:  
+  `cfy deployments create my-blueprint -a my-deployment`
+
+  - Execute an install operation on the deployment:  
+  `cfy deployments execute install my-deployment`
+
+This will install your deployment - all you have left to do is sit back and watch the events flow by until the deployment is complete.
 

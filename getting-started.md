@@ -79,7 +79,8 @@ Note: If the Cloudify working directory is also a git repository, it's recommend
 
   - Bootstrap cloudify on Openstack:  
   `cfy bootstrap`  
-  This could take a bit of time to finish... Looking for something to do in the meanwhile? http://dynamic.xkcd.com/random/comic/
+  Be patient, this task can take sometime based on the network speed between your laptop to the cloud and the cloud speed of provsioning network and hosts
+
 
 
 

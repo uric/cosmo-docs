@@ -69,16 +69,20 @@ Note: If the Cloudify working directory is also a git repository, it's recommend
   `cfy bootstrap`  
   This could take a bit of time to finish... Looking for something to do in the meanwhile? http://dynamic.xkcd.com/random/comic/
 
-<br>
 
 
+# Deploy your first application
 
+  - Upload your blueprint:  
+  `cfy blueprints upload my-app/blueprint.yaml -a my-blueprint`
 
+  - Create a deployment of the blueprint:  
+  `cfy deployments create my-blueprint -a my-deployment`
 
+  - Execute an install operation on the deployment:  
+  `cfy deployments execute install my-deployment`
 
-
-
------
+This will install your deployment - all you have left to do is sit back and watch the events flow by until the deployment is complete.
 
 
 ## Commands Docs
@@ -267,17 +271,4 @@ Note: If the Cloudify working directory is also a git repository, it's recommend
 
 **Example:** `cfy deployments alias my-deployment 38f8520f-809f-4162-ae96-75555d906faa`  
 
-
-# Deploy your first application
-**3. Deploying your application:**
-  - Upload your blueprint:  
-  `cfy blueprints upload my-app/blueprint.yaml -a my-blueprint`
-
-  - Create a deployment of the blueprint:  
-  `cfy deployments create my-blueprint -a my-deployment`
-
-  - Execute an install operation on the deployment:  
-  `cfy deployments execute install my-deployment`
-
-This will install your deployment - all you have left to do is sit back and watch the events flow by until the deployment is complete.
 

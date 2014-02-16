@@ -27,6 +27,15 @@ Each node might also have relationships declared with other nodes. There are 2 t
 * `contained_in` relationship meaning that the current node is hosted inside the specified node. This can be a middleware component that is hosted within a VM or application package deployed within the middleware component.
 * `connected_to` relationship meaning that the current node is connected to the specified node. For example: an appliaction server might have a connection to the database server. The `connected_to` relationship will be implemented by a concrete relationship type with a plugin that has hooks to invoke in order to configure the source or the target nodes or both in order to enable the relationship.
 
+### Cloudify built in portable types
+Cloudify portable types will be the one you will use in the portable blueprints you will compose. They are quite easy to master. Here are the most important ones (for additional reference look at https://github.com/CloudifySource/cosmo-manager/blob/develop/orchestrator/src/main/resources/cloudify/types/types.yaml)
+* `Host` - this type represents a server either virtual or physical (if you are using non-virtualized environment). It defines a small set of properties:
+`host_name` - the name of the host
+`install_agent` - should a Cloudfiy agent be installed by Cloudify on this server so it can later used by other workflow steps to install and manage middleware and application components on this host
+* `middleware_server` - this type is the base type of all middleware level components
+* `application_module` - this type is the base type of all application level components.
+
+
 ### Working with type implementations
 Type implementations are pieces of YAML that holds the concrete properties for one node in the blueprint. This means that the type implementation is an instance of a concrete type (e.g. `openstack_host` that implements host using a Nova API plugin). The type implementation also decalres a reference to a specific node in the portable blueprint using the `node_reference` attribute.
 
@@ -42,3 +51,5 @@ Cloudify 3.0 includes support for OpenStack main types such as:
 
 In this section we will teach you how to create type implementation for each one of this types. We will also show hot to express the dependencies between them in the portable blueprint and in the type implementation section. Let's get started
 #### Working with Openstack Nova Server
+The Openstack Nova Server is implemented by a type called `openstack_host`. This type uses the `openstack-provisioner` plugin to create, start, stop and delete VMs
+It supports any configuration allowed with Nova server create API. 

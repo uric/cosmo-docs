@@ -32,8 +32,14 @@ Cloudify portable types will be the one you will use in the portable blueprints 
 * `Host` - this type represents a server either virtual or physical (if you are using non-virtualized environment). It defines a small set of properties:
 `host_name` - the name of the host
 `install_agent` - should a Cloudfiy agent be installed by Cloudify on this server so it can later used by other workflow steps to install and manage middleware and application components on this host
+* `Network` - a virtual L2 network (virtual switch)
+* `Subnet` - L3 IP range subnet. This component is contained within a virtual network
+* `Router` - L3 router. Router can be connected to several subnets allowing inter-LAN connectivity. It can also have a gateway to an external network for internet access.
+* `Port` - An IP allocated on a subnet
+* `Volume` - A block storage volume to which virtual machines can be connected in order to provide persistant storage
 * `middleware_server` - this type is the base type of all middleware level components
 * `application_module` - this type is the base type of all application level components.
+
 
 
 ### Working with type implementations

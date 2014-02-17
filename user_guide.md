@@ -42,11 +42,11 @@ Cloudify portable types will be the one you will use in the portable blueprints 
 
 #### The Lifecycle Interface
 All of Cloudify portable type types declare the lifecycle interface.  This interface has the following operations:
-* *create* - create or install the component (e.g. create a new VM)
-* *start* - start the component (e.g. start the Apache webserver)
-* *configure* - configure the started component (updates that can only be done once it is up and running)
-* *stop* - shutdown the component (e.g. stop the Unicorn Ruby server)
-* *delete* - remove / uninstall the component (e.g. delete the virtual network)
+* **create** - create or install the component (e.g. create a new VM)
+* **start** - start the component (e.g. start the Apache webserver)
+* **configure** - configure the started component (updates that can only be done once it is up and running)
+* **stop** - shutdown the component (e.g. stop the Unicorn Ruby server)
+* **delete** - remove / uninstall the component (e.g. delete the virtual network)
 Cloudify concrete types implement this interface by using an implementation plugin.This is done by mapping the operations listed above to the plugin coreesponding methods. 
 
 
@@ -60,6 +60,7 @@ The bash executer plugin is a plugin that looks for bash scripts uploaded with t
 The bash middleware type is a concrete type that uses the bash executer plugin to implement the lifecycel operations.
 
 ## Beginners
+In this section we will take a step forward and learn how to work with OpenStack built in types
 
 ### Working with Openstack built in types
 Cloudify 3.0 includes support for OpenStack main types such as:

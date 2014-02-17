@@ -105,7 +105,10 @@ Cloudify offers logs & events as the maintroubleshooting and tracing tools:
 * **Events** - Cloudify report user facing events for any step in workflow and task execution. The events are in JSON format and have all the relevant context included.
 * **Logs** - Cloudify has a logger that enriches log entries with all relevant context information.
 ### Log & Event gathering mechanism
+Cloudify has built-in mechanism for log & events gathering, indexing and persisiting.
+This mechanism is currently used for Cloudify logs but will be extended to support application logs later. The mechanis is composed of [RabbitMQ](http://www.rabbitmq.com) as the main transport and queueing component. [Logstash](http://http://logstash.net/), as the means to format and enrich logs (so we can format and pipe them in various formats for different integrations) and [Elastic Search](http://http://www.elasticsearch.org/) as the log and events indexing mechanism
 
+To enjoy the benefits of this mechanism, the REST API exposes some methods to run queries on Elastic Search and other methods for getting events and logs for a particular workflow execution.
 
 # Supported Clouds & Tools
 ## Clouds and Virtualization

@@ -56,8 +56,10 @@ Type implementations are pieces of YAML that holds the concrete properties for o
 ### The Bash Executer Plugin
 The bash executer plugin is a plugin that looks for bash scripts uploaded with the blueprint. These files can be mapped as arguments to different lifecycle operations.
 
-#### The Bash Middleware Type
+### The Bash Middleware Type
 The bash middleware type is a concrete type that uses the bash executer plugin to implement the lifecycel operations.
+## Putting it all together
+**example here**
 
 ## Beginners
 In this section we will take a step forward and learn how to work with OpenStack built in types

@@ -28,7 +28,7 @@ Each node might also have relationships declared with other nodes. There are 2 t
 * `connected_to` relationship meaning that the current node is connected to the specified node. For example: an appliaction server might have a connection to the database server. The `connected_to` relationship will be implemented by a concrete relationship type with a plugin that has hooks to invoke in order to configure the source or the target nodes or both in order to enable the relationship.
 
 ### Cloudify built in portable types
-Cloudify portable types will be the one you will use in the portable blueprints you will compose. They are quite easy to master. Here are the most important ones (for additional reference look at https://github.com/CloudifySource/cosmo-manager/blob/develop/orchestrator/src/main/resources/cloudify/types/types.yaml)
+Cloudify portable types will be the one you will use in the portable blueprints you will compose. They are quite easy to master. Here are the most important ones (for additional reference look at [types.yaml](https://github.com/CloudifySource/cosmo-manager/blob/develop/orchestrator/src/main/resources/cloudify/types/types.yaml)
 * `Host` - this type represents a server either virtual or physical (if you are using non-virtualized environment). It defines a small set of properties:
 `host_name` - the name of the host
 `install_agent` - should a Cloudfiy agent be installed by Cloudify on this server so it can later used by other workflow steps to install and manage middleware and application components on this host

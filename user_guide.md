@@ -40,10 +40,26 @@ Cloudify portable types will be the one you will use in the portable blueprints 
 * `middleware_server` - this type is the base type of all middleware level components
 * `application_module` - this type is the base type of all application level components.
 
+#### The Lifecycle Interface
+All of Cloudify portable type types declare the lifecycle interface.  This interface has the following operations:
+* *create* - create or install the component (e.g. create a new VM)
+* *start* - start the component (e.g. start the Apache webserver)
+* *configure* - configure the started component (updates that can only be done once it is up and running)
+* *stop* - shutdown the component (e.g. stop the Unicorn Ruby server)
+* *delete* - remove / uninstall the component (e.g. delete the virtual network)
+Cloudify concrete types implement this interface by using an implementation plugin.This is done by mapping the operations listed above to the plugin coreesponding methods. 
 
 
 ### Working with type implementations
 Type implementations are pieces of YAML that holds the concrete properties for one node in the blueprint. This means that the type implementation is an instance of a concrete type (e.g. `openstack_host` that implements host using a Nova API plugin). The type implementation also decalres a reference to a specific node in the portable blueprint using the `node_reference` attribute.
+
+### The Bash Executer Plugin
+The bash executer plugin is a plugin that looks for bash scripts uploaded with the blueprint. These files can be mapped as arguments to different lifecycle operations.
+
+#### The Bash Middleware Type
+The bash middleware type is a concrete type that uses the bash executer plugin to implement the lifecycel operations.
+
+## Beginners
 
 ### Working with Openstack built in types
 Cloudify 3.0 includes support for OpenStack main types such as:

@@ -29,7 +29,7 @@ In version 3.0 phase I, the orchestrator gets start detection events and stop de
 Workflow execution requires the Workflow itslef and a [Topology](#topology)
 The Workflow engine runs the worflow algorithm and in each step process the selected Nodes. For each node it creates a task that typically implements a hook in the node set of lifecycle hooks, using the concrete implementation  ([see plugins](#plugins) ) 
 
-![Task Execution Example](images/architecture/task_execution_example.png [Task Execution Example])
+![Task Execution Example](images/architecture/task_processing_example.png)
 
 ## <a name="REST API">REST API & Web GUI</a>
 Cloudify is controlled via REST API. The REST API covers all the Cloud Orchestration and Management functionality. See [Cloudify REST API Documentation](http://www.cloudifysource.org/cosmo-rest-docs/).

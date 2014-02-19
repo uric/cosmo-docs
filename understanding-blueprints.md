@@ -19,7 +19,7 @@ Blueprints has 2 main sections:
 
 # Nodes
 
-## Types of Nodes and Node Implementation
+## Types and Type implementations
 
 ## Node Properties
 
@@ -35,12 +35,11 @@ Blueprints has 2 main sections:
 
 ## Custom Workflows
 
-# Policies
 
-## What is a Policy?
+# Built-in Types and Interfaces
+## Portable Types
+## Interfaces
+## Relationship types
+## Implemtation types
 
-## Built-in Policies
-
-## Custom Policies
-
-# Built in node types, workflows and policies and their respective properties / operations
+# The runtime model

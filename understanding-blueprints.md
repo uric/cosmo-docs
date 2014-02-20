@@ -16,7 +16,15 @@ Blueprints has 2 main sections:
 
 
 # What's in a Topology?
+A Topology is a graph of application components and their relationships described in YAML. You can think about it as application components being the vertices of the graph and the relationships being the edges of the graph. Each component is described by a YAML object denoted as a YAML list entry. 
 
+Components can be of 3 levels:
+* **Infrastructrue** - Components provided by the IaaS layer (e.g. VM, virtual network, virtual load balancer or storage volume) or by non-cloud phyiscal or virtualized layer (e.g. Host and storage voluem)
+* **Platform / Middleware** - Components that serve as the application containers (such as webservers, application servers, message servers and database servers)
+* **Application modules** - The different application artifacts that needs to be deployed and configured on top of the middleware (such as application binaries, application configuration files, database schemas etc) 
+
+
+The Topology section root element is `nodes` (YAML list) and the nodes themsleves are denoted as entries in the list
 # Nodes
 
 ## Types and Type implementations
